@@ -1,0 +1,229 @@
+// To view the default settings, hold "alt" while clicking on the "Settings" button.
+// For documentation on these settings, see: https://aka.ms/terminal-documentation
+{
+	"$schema": "https://aka.ms/terminal-profiles-schema",
+
+	"defaultProfile": "{03ad4b57-13ed-4588-861a-6612d143ca93}",
+	
+	// You can add more global application settings here.
+	// To learn more about global settings, visit https://aka.ms/terminal-global-settings
+
+	// Launch Settings
+	"initialCols": 80,
+	"initialRows": 25,
+	"launchMode": "default",
+	"alwaysOnTop": true,
+
+	// Selection
+	// If enabled, selections are automatically copied to your clipboard.
+	"copyOnSelect": false,
+	"terminal.integrated.rightClickCopyPaste": false,
+	// If enabled, formatted data is also copied to your clipboard
+	"copyFormatting": false,
+
+	// Tab UI
+	"alwaysShowTabs": true,
+	"showTabsInTitlebar": true,
+	"showTerminalTitleInTitlebar": true,
+	"tabWidthMode": "equal",
+
+	// Miscellaneous
+	"confirmCloseAllTabs": true,
+	"startOnUserLogin":  false,
+	"theme": "system",
+	"snapToGridOnResize": true,
+		
+	//When this set to true, the terminal will redraw the entire screen each frame. 
+	//When set to false, it will render only the updates to the screen between frames.
+	"experimental.rendering.forceFullRepaint": false,
+	
+	// Matrix
+	"experimental.retroTerminalEffect": false,
+
+
+	// A profile specifies a command to execute paired with information about how it should look and feel.
+	// Each one of them will appear in the 'New Tab' dropdown,
+	//   and can be invoked from the commandline with `wt.exe -p xxx`
+	// To learn more about profiles, visit https://aka.ms/terminal-profile-settings
+	"profiles":
+	{
+		"defaults":
+		{
+			// Put settings here that you want to apply to all profiles.
+		},
+		"list":
+		[
+			{
+				"guid": "{03ad4b57-13ed-4588-861a-6612d143ca93}",
+				"commandline": "%PROGRAMFILES%/git/usr/bin/bash.exe -i -l",
+				// "commandline": "%USERPROFILE%/AppData/Local/Programs/Git/bin/bash.exe -l -i",
+				// "commandline": "%USERPROFILE%/scoop/apps/git/current/usr/bin/bash.exe -l -i",
+				"icon": "%PROGRAMFILES%/Git/mingw64/share/git/git-for-windows.ico",
+				// "icon": "%USERPROFILE%/AppData/Local/Programs/Git/mingw64/share/git/git-for-windows.ico",
+				// "icon": "%USERPROFILE%/apps/git/current/usr/share/git/git-for-windows.ico",
+				"name" : "Git Bash",
+				"startingDirectory" : "%USERPROFILE%",
+				
+
+				"colorScheme": "Batu_Scheme",
+				"antialiasingMode": "grayscale",
+				"closeOnExit": "graceful",
+				"cursorShape": "filledBox",
+				"cursorColor": "#FF00FF",
+				// "fontFace": "Dejavu Sans Mono",
+				"fontFace": "Consolas",
+				"fontSize": 12,
+				"hidden": false,
+				"historySize": 9001,
+				"padding": "8, 8, 8, 8",
+				"snapOnInput": true,
+				"altGrAliasing": true,
+				"useAcrylic": false,
+				"acrylicOpacity": 0.3
+			},
+			{
+				// Make changes here to the powershell.exe profile.
+				"guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
+				"name": "Windows PowerShell",
+				"commandline": "powershell.exe",
+				"hidden": false
+			},
+			{
+				// Make changes here to the cmd.exe profile.
+				"guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
+				"name": "Command Prompt",
+				"commandline": "cmd.exe",
+				"hidden": false
+			},
+			{
+				"guid": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
+				"hidden": false,
+				"name": "PowerShell",
+				"source": "Windows.Terminal.PowershellCore"
+			},
+			{
+				"guid": "{b453ae62-4e3d-5e58-b989-0a998ec441b8}",
+				"hidden": false,
+				"name": "Azure Cloud Shell",
+				"source": "Windows.Terminal.Azure"
+			}
+		]
+	},
+
+	// Add custom color schemes to this array.
+	// To learn more about color schemes, visit https://aka.ms/terminal-color-schemes
+	"schemes":
+	[
+		{
+			"name": "Batu_Scheme",
+			"foreground": "#10FF10",
+			"background": "#000000",
+			"cursorColor": "#FF00FF",
+			"black": "#303030",
+			"red": "#CC0000",
+			"green": "#00CC00",
+			"yellow": "#CCCC00",
+			"blue": "#0000CC",
+			"purple": "#CC00CC",
+			"cyan": "#00CCCC",
+			"white": "#CCCCCC",
+			"brightBlack": "#000000",
+			"brightRed": "#FF0000",
+			"brightGreen": "#00FF00",
+			"brightYellow": "#FFFF00",
+			"brightBlue": "#0000FF",
+			"brightPurple": "#FF00FF",
+			"brightCyan": "#00FFFF",
+			"brightWhite": "#FFFFFF"
+		}
+
+	],
+
+	// Add custom keybindings to this array.
+	// To unbind a key combination from your defaults.json, set the command to "unbound".
+	// To learn more about keybindings, visit https://aka.ms/terminal-keybindings
+	"keybindings":
+	[
+		// Application-level Keys
+		{ "command": "newTab", "keys": "alt+enter" },
+		{ "command": "openNewTabDropdown", "keys": "alt+shift+enter" },
+		{ "command": "closeWindow", "keys": "alt+x" },
+		{ "command": "closeTab", "keys": "alt+shift+x" },
+		{ "command": "closePane", "keys": "alt+w" },
+
+		{ "command": "toggleFullscreen", "keys": "alt+f" },
+		{ "command": "toggleFocusMode", "keys": "alt+shift+f" },
+		{ "command": "toggleAlwaysOnTop", "keys": "alt+shift+o" },
+
+		{ "command": "openSettings", "keys": "ctrl+," },
+		{ "command": { "action": "openSettings", "target": "defaultsFile" }, "keys": "ctrl+alt+," },
+
+		{ "command": "find", "keys": "alt+/" },
+
+		{ "command": "toggleRetroEffect", "keys": "alt+r"},
+
+		// Tab Management
+		// "command": "closeTab" is unbound by default.
+		//   The closeTab command closes a tab without confirmation, even if it has multiple panes.
+		{ "command": "duplicateTab", "keys": "alt+d" },
+		{ "command": "nextTab", "keys": "ctrl+tab" },
+		{ "command": "prevTab", "keys": "ctrl+shift+tab" },
+
+		{ "command": { "action": "newTab", "index": 0 }, "keys": "ctrl+1" },
+		{ "command": { "action": "newTab", "index": 1 }, "keys": "ctrl+2" },
+		{ "command": { "action": "newTab", "index": 2 }, "keys": "ctrl+3" },
+		{ "command": { "action": "newTab", "index": 3 }, "keys": "ctrl+4" },
+		{ "command": { "action": "newTab", "index": 4 }, "keys": "ctrl+5" },
+		{ "command": { "action": "newTab", "index": 5 }, "keys": "ctrl+6" },
+		{ "command": { "action": "newTab", "index": 6 }, "keys": "ctrl+7" },
+		{ "command": { "action": "newTab", "index": 7 }, "keys": "ctrl+8" },
+		{ "command": { "action": "newTab", "index": 8 }, "keys": "ctrl+9" },
+
+		{ "command": { "action": "switchToTab", "index": 0 }, "keys": "alt+1" },
+		{ "command": { "action": "switchToTab", "index": 1 }, "keys": "alt+2" },
+		{ "command": { "action": "switchToTab", "index": 2 }, "keys": "alt+3" },
+		{ "command": { "action": "switchToTab", "index": 3 }, "keys": "alt+4" },
+		{ "command": { "action": "switchToTab", "index": 4 }, "keys": "alt+5" },
+		{ "command": { "action": "switchToTab", "index": 5 }, "keys": "alt+6" },
+		{ "command": { "action": "switchToTab", "index": 6 }, "keys": "alt+7" },
+		{ "command": { "action": "switchToTab", "index": 7 }, "keys": "alt+8" },
+		{ "command": { "action": "switchToTab", "index": 8 }, "keys": "alt+9" },
+
+
+		// Pane Management
+		{ "command": { "action": "splitPane", "split": "auto", "splitMode": "duplicate" }, "keys": "alt+s" },
+		{ "command": { "action": "moveFocus", "direction": "down" }, "keys": "alt+j"},
+		{ "command": { "action": "moveFocus", "direction": "down" }, "keys": "alt+down"},
+		{ "command": { "action": "moveFocus", "direction": "left" }, "keys": "alt+h" },
+		{ "command": { "action": "moveFocus", "direction": "left" }, "keys": "alt+left" },
+		{ "command": { "action": "moveFocus", "direction": "right" }, "keys": "alt+l" },
+		{ "command": { "action": "moveFocus", "direction": "right" }, "keys": "alt+right" },
+		{ "command": { "action": "moveFocus", "direction": "up" }, "keys": "alt+k" },
+		{ "command": { "action": "moveFocus", "direction": "up" }, "keys": "alt+up" },
+		
+		{ "command": { "action": "splitPane", "split": "horizontal" }, "keys": "alt+shift+-" },
+		{ "command": { "action": "splitPane", "split": "vertical" }, "keys": "alt+shift+plus" },
+
+		{ "command": { "action": "resizePane", "direction": "down" }, "keys": "alt+shift+down" },
+		{ "command": { "action": "resizePane", "direction": "left" }, "keys": "alt+shift+left" },
+		{ "command": { "action": "resizePane", "direction": "right" }, "keys": "alt+shift+right" },
+		{ "command": { "action": "resizePane", "direction": "up" }, "keys": "alt+shift+up" },
+
+		// Clipboard Integration
+		{ "command": { "action": "copy", "singleLine": false }, "keys": "shift+end" },
+		{ "command": { "action": "copy", "singleLine": true }, "keys": "alt+shift+end" },
+		{ "command": "paste", "keys": "shift+insert" },
+
+		// Scrollback
+		{ "command": "scrollDown", "keys": "ctrl+shift+down" },
+		{ "command": "scrollDownPage", "keys": "ctrl+shift+pgdn" },
+		{ "command": "scrollUp", "keys": "ctrl+shift+up" },
+		{ "command": "scrollUpPage", "keys": "ctrl+shift+pgup" },
+
+		// Visual Adjustments
+		{ "command": { "action": "adjustFontSize", "delta": 1 }, "keys": "ctrl+=" },
+		{ "command": { "action": "adjustFontSize", "delta": -1 }, "keys": "ctrl+-" },
+		{ "command": "resetFontSize", "keys": "ctrl+0" }
+
+	]
+}
