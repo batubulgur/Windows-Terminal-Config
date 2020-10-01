@@ -18,6 +18,6 @@ mklink /D Link Target & REM soft link pointing to a directory
 ```
 3. Create a symlink of the settings.json at the Default config file location
 ```
-mklink C:\Users\%USERNAME%\AppData\Local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json "C:\Users\%USERNAME%\Git Repositories\Windows-Terminal-Config\settings.json"
+mklink "C:\Users\%USERNAME%\AppData\Local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json" "C:\Users\%USERNAME%\Git Repositories\Windows-Terminal-Config\settings.json"
 ```
 
